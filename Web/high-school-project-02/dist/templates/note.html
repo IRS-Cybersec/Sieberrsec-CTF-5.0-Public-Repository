@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        window.name = "{{note[1]}}"
+    </script>
+    <head>
+        <title>{{note[1]}}</title>
+    </head>
+    <body>
+        <textarea id="title"></textarea>
+        <textarea id="content"></textarea>
+
+    </body>
+    <script>
+        function load(a, b){
+            document.getElementById('title').value = a;
+            document.getElementById('content').value = b;
+        }
+        load("{{note[1]}}", "{{note[2]|safe}}");
+
+    </script>
+</html>

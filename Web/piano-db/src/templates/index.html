@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>piano db</title>
+</head>
+<body>
+    <div class="container">
+        <h1>piano db</h1>
+        
+        <br><br>
+        <form action="/" method="post" class="form-login">
+            <h3>Please choose a song:</h3>
+            <label for="title" class="sr-only">Title</label>
+            <select id="title" name="title">
+                {% for title in titles%}
+                    <option value="{{title}}">{{title}}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+        </form>
+        <br>
+        
+        <div class="result">
+            {% if link %}
+            <iframe width="560" height="315" src="{{link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            {% endif %}
+            {% if error %}
+            <p>{{error}}</p>
+            {% endif %}
+        </div>
+        <br>
+    </div>
+</body>
+</html>
+

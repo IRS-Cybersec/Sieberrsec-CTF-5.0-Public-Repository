@@ -1,0 +1,48 @@
+version: "3"
+services:
+  image-viewer:
+    build: image-viewer/src
+    ports:
+      - "2001:2001"
+
+  ssti1:
+    build: secure-systems-technologies-integrated/src
+    ports:
+      - "2002:8000"
+
+  ssti2:
+    build: secure-systems-technologies-integrated-revenge/src/flask_server
+    ports:
+      - "2003:8000"
+
+  high-school-1:
+    build: high-school-project-01/src
+    ports:
+      - "2004:5000" 
+   
+  high-school-2:
+    build: high-school-project-02/src
+    ports:
+      - "2005:5000"
+
+  josh-template-viewer:
+    build: josh-template-viewer/src
+    ports:
+      - "2006:8000" 
+  
+  ssti3:
+    build: secure-systems-technologies-integrated-revenge-revenge/src/flask_server
+    ports:
+      - "2007:8000"
+  
+  sieberrsec-query-lobby:
+    build: sieberrsec-query-lobby/src
+    ports:
+      - "2008:8000"
+  
+  piano-db:
+    build: piano-db/src
+    ports:
+      - "2009:8000"
+
+

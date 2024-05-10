@@ -1,0 +1,6 @@
+copysrc.sh
+zipdist.sh
+pwn/setup_pwn.sh
+pwn/stop_pwn.sh
+challenge-template
+insider-distrib.zip

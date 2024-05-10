@@ -1,0 +1,5 @@
+Flask===2.2.3
+gunicorn===21.2.0
+PyJWT===2.6.0
+pytest-playwright
+Werkzeug==2.2.2

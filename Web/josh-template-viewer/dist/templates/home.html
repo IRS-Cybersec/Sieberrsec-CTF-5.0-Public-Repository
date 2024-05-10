@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Homepage</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to Flask Homepage</h1>
+        <hr>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">User Details</h5>
+				{% if access.uuid == '0' %}
+                <p class="card-text">UUID: sctf{REDACTED}</p>
+				{% else %}
+                <p class="card-text">Username: {{ access.username }}</p>
+				{% endif %}
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>High School Project, Notetaking app - Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 100px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h2 {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .create-account-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <h2>Project 01 - Note Taking App</h2>
+            <ul class="nav nav-tabs" id="loginTabs" role="tablist" style="margin-bottom: 10px">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Login</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="create-account-tab" data-bs-toggle="tab" data-bs-target="#create-account" type="button" role="tab" aria-controls="create-account" aria-selected="false">Create Account</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="loginTabsContent">
+                <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                    <form action="/login" method="POST">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" class="form-control" placeholder="Enter your username">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" class="form-control" placeholder="Enter your password">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Login">
+                        </div>
+                        <a href="#" class="create-account-link" onclick="switchToCreateAccount()">Create an Account</a>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="create-account" role="tabpanel" aria-labelledby="create-account-tab">
+                    <form action="/createAccount" method="POST">
+                        <div class="form-group">
+                            <label for="new-username">Username</label>
+                            <input type="text" name="username" class="form-control" placeholder="Enter a username">
+                        </div>
+                        <div class="form-group">
+                            <label for="new-password">Password</label>
+                            <input type="password" name="password" class="form-control" placeholder="Enter a password">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Create Account">
+                        </div>
+                        <a href="#" class="create-account-link" onclick="switchToLogin()">Login</a>
+                    </form>
+                </div>
+            </div>                                      
+        </div>
+    </div>
+
+    <script>
+        function switchToCreateAccount() {
+            const tab = new bootstrap.Tab(document.getElementById('create-account-tab'));
+            tab.show();
+        }
+
+        function switchToLogin() {
+            const tab = new bootstrap.Tab(document.getElementById('login-tab'));
+            tab.show();
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

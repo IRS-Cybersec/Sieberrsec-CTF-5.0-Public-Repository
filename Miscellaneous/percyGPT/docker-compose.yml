@@ -1,0 +1,19 @@
+version: '3'
+services:
+  percygpt:
+    build: src
+    ports:
+      - "2010:8000"
+    restart: unless-stopped
+
+  percygpt2:
+    build: src
+    ports:
+      - "2011:8000"
+    restart: unless-stopped
+  
+  percygpt3:
+    build: src
+    ports:
+      - "2012:8000"
+    restart: unless-stopped
